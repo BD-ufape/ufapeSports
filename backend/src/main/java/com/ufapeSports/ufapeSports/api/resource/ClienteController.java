@@ -26,7 +26,7 @@ public class ClienteController {
         return new ResponseEntity<>(savedCliente, HttpStatus.CREATED);
     }
 
-    @PutMapping("/atualizar")
+    @PutMapping("/atualizar/{id}")
     public ResponseEntity<Cliente> updateCliente(@PathVariable("id") Long clienteId, @RequestBody Cliente clienteDetails) {
         Cliente cliente = clienteService.findClienteById(clienteId);
         if (cliente == null) {
@@ -41,7 +41,7 @@ public class ClienteController {
         return ResponseEntity.ok(updatedCliente);
     }
 
-    @DeleteMapping("/deletar")
+    @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> deleteCliente(@PathVariable("id") Long clienteId) {
         Cliente cliente = clienteService.findClienteById(clienteId);
         if (cliente == null) {

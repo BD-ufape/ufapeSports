@@ -39,12 +39,11 @@ public class PromocaoController {
         if (descricao != null) {
             return ResponseEntity.ok(promocaoService.buscarPorDescricao(descricao));
         } else {
-            // Implementar um método em PromocaoService para listar todas as promoções
             return ResponseEntity.ok(promocaoService.listarTodasPromocoes());
         }
     }
 
-    @DeleteMapping("/deletar")
+    @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> deletarPromocao(@PathVariable Long id) {
         promocaoService.deletarPromocao(id);
         return ResponseEntity.noContent().build();

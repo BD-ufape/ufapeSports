@@ -36,7 +36,7 @@ public class ProdutoController {
         return new ResponseEntity<>(savedProduto, HttpStatus.CREATED);
     }
 
-    @PutMapping("/atualizar")
+    @PutMapping("/atualizar/{id}")
     public ResponseEntity<Produto> updateProduto(@PathVariable("id") Long produtoId, @RequestBody Produto produtoDetails) {
         Produto produto = service.findProdutoById(produtoId);
         if (produto == null) {
@@ -53,7 +53,7 @@ public class ProdutoController {
         return ResponseEntity.ok(updatedProduto);
     }
 
-    @DeleteMapping("/deletar")
+    @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> deleteProduto(@PathVariable("id") Long produtoId) {
         Produto produto = service.findProdutoById(produtoId);
         if (produto == null) {

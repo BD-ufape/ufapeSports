@@ -36,7 +36,7 @@ public class EnderecoController {
         return new ResponseEntity<>(savedEndereco, HttpStatus.CREATED);
     }
 
-    @PutMapping("/atualizar")
+    @PutMapping("/atualizar/{id}")
     public ResponseEntity<Endereco> updateEndereco(@PathVariable("id") Long enderecoId, @RequestBody Endereco enderecoDetails) {
         Endereco endereco = service.findEnderecoById(enderecoId);
         if (endereco == null) {
@@ -51,7 +51,7 @@ public class EnderecoController {
         return ResponseEntity.ok(updatedEndereco);
     }
 
-    @DeleteMapping("/deletar")
+    @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> deleteEndereco(@PathVariable("id") Long enderecoId) {
         Endereco endereco = service.findEnderecoById(enderecoId);
         if (endereco == null) {

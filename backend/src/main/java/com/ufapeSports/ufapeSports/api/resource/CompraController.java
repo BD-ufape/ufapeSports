@@ -22,7 +22,7 @@ public class CompraController {
 		this.service = service;
 	}
 	
-	@GetMapping("/buscarCompra")
+	@GetMapping("/buscarCompra/{id}")
 	public ResponseEntity<Compra> buscarCompraPorId(@PathVariable Long id) {
 		Compra compra = service.findCompraById(id);
 		if (compra != null) {
