@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +25,7 @@ public class Compra {
 	@Id
 	@Column(name = "compraID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long compraID;
+	private Long compraId;
 	
 	@Column(name = "dataDaCompra")
 	private LocalDateTime dataDaCompra;
@@ -40,4 +42,11 @@ public class Compra {
 	@Column(name = "total")
 	private String total;
 	
+	@ManyToOne
+	@JoinColumn(name="cliente_id")
+	private Cliente cliente;
+	
+	public Cliente getCliente() {
+		return this.cliente;
+	}
 }
