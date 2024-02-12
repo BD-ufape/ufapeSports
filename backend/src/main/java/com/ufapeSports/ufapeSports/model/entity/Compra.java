@@ -25,7 +25,7 @@ public class Compra {
 	@Id
 	@Column(name = "compraID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long compraID;
+	private Long compraId;
 	
 	@Column(name = "dataDaCompra")
 	private LocalDateTime dataDaCompra;

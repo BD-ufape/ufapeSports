@@ -14,18 +14,16 @@ import com.ufapeSports.ufapeSports.service.CompraService;
 @Service
 public class CompraServiceImpl implements CompraService{
 	
-	private CompraRepository compraRepository;
-	private ClienteRepository clienteRepository;
+	private CompraRepository repository;
 	
 	@Autowired
-	public CompraServiceImpl(CompraRepository compraRepository, ClienteRepository clienteRepository) {
+	public CompraServiceImpl(CompraRepository repository) {
 		super();
-		this.compraRepository = compraRepository;
-		this.clienteRepository = clienteRepository;
+		this.repository = repository;
 	}
 	
 	public Compra findCompraById(Long compraId) {
-		return compraRepository.findByCompraId(compraId);
+		return repository.findByCompraId(compraId);
 	}
 
     public Cliente findClienteByCompra(Compra compra) {
@@ -35,12 +33,8 @@ public class CompraServiceImpl implements CompraService{
     public List<Compra> findComprasByCliente(Cliente cliente) {
     	return cliente.getCompras();
     }
-    
-    public List<Compra> findComprasByClienteByCpf(String cpf) {
-    	return clienteRepository.findByCpf(cpf).getCompras();
-    }
 
     public Compra saveCompra(Compra compra) {
-    	return compraRepository.save(compra);
+    	return repository.save(compra);
     }
 }

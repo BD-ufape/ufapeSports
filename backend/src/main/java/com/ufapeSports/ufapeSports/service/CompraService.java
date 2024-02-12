@@ -11,6 +11,4 @@ public interface CompraService {
     Cliente findClienteByCompra(Compra compra);
 
     List<Compra> findComprasByCliente(Cliente cliente);
-    
-    List<Compra> findComprasByClienteByCpf(String cpf);
 }

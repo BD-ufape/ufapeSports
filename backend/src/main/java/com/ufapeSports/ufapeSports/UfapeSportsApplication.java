@@ -6,6 +6,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.ufapeSports.ufapeSports.api.resource.ClienteController;
+
 @SpringBootApplication
 @EnableWebMvc
 public class UfapeSportsApplication implements WebMvcConfigurer{
