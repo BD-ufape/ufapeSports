@@ -36,6 +36,6 @@ public class CompraServiceImpl implements CompraService{
 
 	@Override
 	public List<Compra> findComprasByCliente(Long clienteId) {
-		return repository.findByClienteId(clienteId);
+		return repository.findByCliente_ClienteID(clienteId);
 	}
 }
