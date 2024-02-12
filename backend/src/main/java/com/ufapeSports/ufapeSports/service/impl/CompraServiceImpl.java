@@ -21,20 +21,21 @@ public class CompraServiceImpl implements CompraService{
 		super();
 		this.repository = repository;
 	}
-	
+	@Override
 	public Compra findCompraById(Long compraId) {
 		return repository.findByCompraId(compraId);
 	}
-
+	@Override
     public Cliente findClienteByCompra(Compra compra) {
     	return compra.getCliente();
     }
-
-    public List<Compra> findComprasByCliente(Cliente cliente) {
-    	return cliente.getCompras();
-    }
-
+    @Override
     public Compra saveCompra(Compra compra) {
     	return repository.save(compra);
     }
+
+	@Override
+	public List<Compra> findComprasByCliente(Long clienteId) {
+		return repository.findByClienteId(clienteId);
+	}
 }

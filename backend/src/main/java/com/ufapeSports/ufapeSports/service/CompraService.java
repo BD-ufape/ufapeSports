@@ -10,5 +10,7 @@ public interface CompraService {
 
     Cliente findClienteByCompra(Compra compra);
 
-    List<Compra> findComprasByCliente(Cliente cliente);
+    List<Compra> findComprasByCliente(Long clienteId);
+
+	Compra saveCompra(Compra compra);
 }
