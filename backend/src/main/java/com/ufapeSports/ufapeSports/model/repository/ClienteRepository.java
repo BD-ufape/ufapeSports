@@ -18,7 +18,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 
     Cliente findByEmail(String email);
 
-    void deleteByClienteID(Long clienteID);
+    void deleteClienteByclienteID(Long clienteID);
 
     long count();
 }

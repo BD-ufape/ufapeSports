@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ufapeSports.ufapeSports.model.entity.Cliente;
 import com.ufapeSports.ufapeSports.model.repository.ClienteRepository;
@@ -51,13 +52,15 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
+    @Transactional
     public Cliente updateCliente(Cliente cliente) {
         return repository.save(cliente);
     }
 
     @Override
+    @Transactional
     public void deleteClienteById(Long clienteID) {
-    	repository.deleteByClienteID(clienteID);
+    	repository.deleteClienteByclienteID(clienteID);
     }
 
     @Override
