@@ -50,6 +50,16 @@ public class ProdutoServiceImpl implements ProdutoService{
     public List<Produto> findProdutosByCor(String cor) {
         return repository.findByCor(cor);
     }
+    
+    @Override
+    public List<Produto> findAll() {
+        return repository.findAll();
+    }
+    
+    @Override
+    public List<Produto> buscarProdutosPorIDs(List<Long> produtoIDs) {
+        return repository.findAllByProdutoIDIn(produtoIDs);
+    }
 
     @Override
     public Produto saveProduto(Produto produto) {

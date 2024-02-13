@@ -20,6 +20,10 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     List<Produto> findByCor(String cor);
 
     void deleteByProdutoID(Long produtoID);
+    
+    List<Produto> findAll();
+    
+    List<Produto> findAllByProdutoIDIn(List<Long> produtoIDs);
 
     long count();
 }

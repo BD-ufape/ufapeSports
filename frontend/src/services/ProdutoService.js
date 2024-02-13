@@ -24,6 +24,14 @@ class ProdutoService extends ApiService {
   countProdutos() {
     return this.get('/count')
   }
+
+  getAllProducts() {
+    return this.get('/todos')
+  }
+
+  getProdutosPorIDs(ids) {
+    return this.get('/produtos', ids);
+  }
 }
 
 export default ProdutoService;

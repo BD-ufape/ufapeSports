@@ -16,6 +16,10 @@ public interface ProdutoService {
 	    List<Produto> findProdutosByEstoqueGreaterThan(String quantidade);
 
 	    List<Produto> findProdutosByCor(String cor);
+	    
+	    List<Produto> findAll();
+	    
+	    List<Produto> buscarProdutosPorIDs(List<Long> produtoIDs);
 
 	    Produto saveProduto(Produto produto);
 

@@ -1,0 +1,9 @@
+.compra {
+  width: 25%;
+}
+
+.compra input{
+  width: 100%;
+  padding: 0.3rem;
+  margin: 1rem;
+}

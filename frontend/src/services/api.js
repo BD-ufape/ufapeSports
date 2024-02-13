@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpClient = axios.create({
-  baseURL: 'http://localhost:3306'
+  baseURL: 'http://localhost:8080'
 })
 
 class ApiService {
@@ -26,7 +26,7 @@ class ApiService {
 
   get(url) {
     const requestUrl = `${this.apiurl}${url}`
-    return httpClient.post(requestUrl)
+    return httpClient.get(requestUrl)
   }
 }
 
