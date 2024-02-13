@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ufapeSports.ufapeSports.model.entity.Produto;
 import com.ufapeSports.ufapeSports.model.repository.ProdutoRepository;
@@ -61,6 +62,7 @@ public class ProdutoServiceImpl implements ProdutoService{
     }
 
     @Override
+    @Transactional
     public void deleteProdutoById(Long produtoID) {
     	repository.deleteByProdutoID(produtoID);
     }
