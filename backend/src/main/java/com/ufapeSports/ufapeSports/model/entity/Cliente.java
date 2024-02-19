@@ -49,6 +49,9 @@ public class Cliente {
 	@Column(name = "email")
 	private String email;
 	
+	@Column(name = "senha")
+	private String senha;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
