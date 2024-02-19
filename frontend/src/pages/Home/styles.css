@@ -1,4 +1,45 @@
+/* styles.css */
+body {
+  background-color: #f0f0f0; /* Cor de fundo suave */
+  font-family: 'Arial', sans-serif; /* Fonte moderna e legível */
+  color: #333; /* Cor de texto principal */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+}
+
+h1 {
+  color: #27ae60; /* Cor verde vibrante */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+}
+
 .home-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  gap: 20px; /* Espaço entre os botões */
+  flex-wrap: wrap; /* Permite que os botões se ajustem em telas menores */
+}
+
+button {
+  background-color: #3498db; /* Cor azul alegre */
+  color: #ffffff; /* Texto branco para contraste */
+  border: none; /* Remove a borda padrão do botão */
+  padding: 10px 20px; /* Espaçamento interno para torná-lo maior */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar a possibilidade de clique */
+  transition: background-color 0.3s ease; /* Transição suave ao mudar de cor */
+}
+
+button:hover {
+  background-color: #2980b9; /* Cor azul um pouco mais escura ao passar o mouse */
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: inherit; /* Herda a cor do elemento pai */
+}
+
+@media (max-width: 600px) {
+  .home-buttons {
+    flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
+  }
 }
